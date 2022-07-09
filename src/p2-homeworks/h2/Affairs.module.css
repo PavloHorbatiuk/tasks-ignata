@@ -1,3 +1,46 @@
-.someClass {
+.wrapper {
+    display: flex;
+}
 
+.title {
+    margin: 10px;
+    width: 100px;
+}
+
+.priority {
+    margin: 10px;
+    width: 100px;
+}
+
+.high {
+    color: red
+}
+
+.low {
+    color: yellow;
+}
+
+.middle {
+    color: green;
+}
+
+.btn {
+    margin: 10px;
+    width: 100px;
+    background: #030;
+    color: #9f9;
+    outline: none;
+}
+
+.filterBtn {
+    margin: 10px;
+    width: 60px;
+    background: #030;
+    color: #9f9;
+    outline: none;
+}
+
+.block {
+    margin: 10px;
+    width: 100px;
 }
