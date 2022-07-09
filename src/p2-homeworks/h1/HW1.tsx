@@ -1,8 +1,11 @@
 import React, {useEffect} from 'react'
 import Message from "./Message";
 import AddMessageForm from "./AddMessageForm";
+import {v1} from "uuid";
+
 
 export interface messageDataType {
+    id: string
     avatar: string,
     name: string,
     message: string,
@@ -10,6 +13,7 @@ export interface messageDataType {
 }
 
 const messageData = {
+    id: v1(),
     avatar: 'https://i.pravatar.cc/300',
     name: 'Some Name',
     message: 'some text',
@@ -19,11 +23,10 @@ const messageData = {
 
 function HW1() {
     const [post, setPost] = React.useState<messageDataType[]>([])
-    const [time, setTime] = React.useState < string | null > (null);
+    const [time, setTime] = React.useState <string>("");
     useEffect(() => {
-        let time = getCurrentTime();
-        setTime(time);
-    }, []);
+        setTime(getCurrentTime())
+    }, [])
     const getCurrentTime = () => {
         let today = new Date();
         let hours = (today.getHours() < 10 ? '0' : '') + today.getHours();
@@ -31,12 +34,15 @@ function HW1() {
         let seconds = (today.getSeconds() < 10 ? '0' : '') + today.getSeconds();
         return hours + ':' + minutes + ':' + seconds;
     }
-    const addMessage = (text: string) => setPost([...post, {...messageData, message: text}])
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>, text: string) => {
-        if (e.charCode === 13) {
-            addMessage(text)
-        }
+    const addMessage = (text: string) => {
+        setTime(getCurrentTime());
+        setPost([...post, {...messageData, message: text, time: time, id: v1()}])
     }
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>, text: string) => {
+        if (e.charCode === 13) addMessage(text)
+    }
+
+
     return (
         <div>
             <hr/>
@@ -45,10 +51,11 @@ function HW1() {
             should work (должно работать)
             {post.map(m =>
                 <Message
+                    key={m.id}
                     avatar={m.avatar}
                     name={m.name}
                     message={m.message}
-                    time={time}
+                    time={m.time}
                 />)
             }
             <AddMessageForm
