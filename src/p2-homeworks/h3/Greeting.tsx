@@ -8,23 +8,19 @@ type GreetingPropsType = {
     error: string // need to fix any
     totalUsers: number
     handlerBlurCallback: () => void// need to fix any
-    handlerFocusCallback: (e: React.FocusEvent<HTMLInputElement>) => void// need to fix any
 }
 
 // презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, error, totalUsers, handlerBlurCallback, handlerFocusCallback} // деструктуризация пропсов
+    {name, setNameCallback, addUser, error, totalUsers, handlerBlurCallback} // деструктуризация пропсов
 ) => {
     const inputClass = error === '' ? s.inputClass : s.inputClass + ' ' + s.error   // need to fix with (?:)
-    const disable =  name.length < 2
+    const disable = name.length < 2
     const handlerBlur = () => handlerBlurCallback()
-    const handlerFocus = (e: React.FocusEvent<HTMLInputElement>) => handlerFocusCallback(e.currentTarget.value)
-
     return (
         <div className={s.wrapper}>
             <div>
-                <input onFocus={handlerFocus}
-                       onBlur={handlerBlur}
+                <input onBlur={handlerBlur}
                        value={name}
                        onChange={setNameCallback}
                        className={inputClass}/>
