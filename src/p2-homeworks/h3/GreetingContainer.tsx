@@ -16,10 +16,12 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const [name, setName] = useState<any>('') // need to fix any
     const [error, setError] = useState<any>('') // need to fix any
 
-    const handlerBlurCallback = () => name.length < 1 ? setError('name is require') : setError("")
-    const handlerFocusCallback = () =>  setError("")
-    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        setName(e.currentTarget.value)// need to fix
+    const handlerBlurCallback = () => name.length <= 1 ? setError('name is require') : setError("")
+    const handlerFocusCallback = () => {
+
+    }
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {// need to fix any
+        setName(e.currentTarget.value) // need to fix
     }
     const addUser = () => {
         alert(`Hello ${name} !`)
