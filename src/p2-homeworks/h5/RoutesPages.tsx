@@ -11,7 +11,7 @@ export enum PATH {
     MAIN = '/',
     JUNIOR_PLUS = '/junior-plus',
     WRONG_PAGE = '/*',
-    ERROR = '404',
+    ERROR = '/404',
     JUNIOR = "/junior"
     // add paths
 }
@@ -32,7 +32,7 @@ function RoutesPages() {
                 // add routes
 
                 {/*у этого роута нет пути, он отрисуется если пользователь захочет попасть на несуществующую страницу*/}
-                < Route path={PATH.ERROR} element={<Error404/>}/>
+                <Route path={PATH.ERROR} element={<Error404/>}/>
                 <Route path={PATH.WRONG_PAGE} element={< Navigate to={PATH.ERROR}/>}/>
 
             </Routes>

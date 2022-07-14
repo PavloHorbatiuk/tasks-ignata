@@ -4,17 +4,17 @@ import {PATH} from "./RoutesPages";
 import s from './HW5.module.css'
 
 function Header() {
-
+const activeClass = ({isActive}: { isActive: boolean }) => isActive ? `${s.active} + ${s.link}` : s.link
 
     return (
         <div className={s.wrapper}>
-            <NavLink className={s.link} to={PATH.PRE_JUNIOR}>
+            <NavLink className={activeClass} to={PATH.PRE_JUNIOR}>
                 pre-junior
             </NavLink>
-            <NavLink className={s.link} to={PATH.JUNIOR}>
+            <NavLink className={activeClass} to={PATH.JUNIOR}>
                 junior
             </NavLink>
-            <NavLink className={s.link} to={PATH.JUNIOR_PLUS}>
+            <NavLink className={activeClass} to={PATH.JUNIOR_PLUS}>
                 junior+
             </NavLink>
             <div className={s.block}></div>
