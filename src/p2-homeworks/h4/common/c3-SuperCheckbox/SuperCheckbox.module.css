@@ -1,7 +1,19 @@
 .checkbox {
-
+  transform: scale(2);
+  margin-right: 10px;
+  background: #353;
+  cursor: pointer;
+  margin: 3px 3px 3px 4px;
 }
 
-.spanClassName {
 
+.spanClassName {
+  margin: 15px;
+  cursor: pointer;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }

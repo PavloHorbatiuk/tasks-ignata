@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import SuperInputText from './common/c1-SuperInputText/SuperInputText'
 import s from './HW4.module.css'
 import SuperButton from './common/c2-SuperButton/SuperButton'
@@ -21,7 +21,7 @@ function HW4() {
 
     return (
         <div>
-            <hr/>
+            <hr />
             homeworks 4
 
             <div className={s.column}>
@@ -30,7 +30,7 @@ function HW4() {
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
-                    // spanClassName={s.testSpanError}
+                // spanClassName={s.testSpanError}
                 />
 
                 <SuperInputText
@@ -64,15 +64,15 @@ function HW4() {
                 </SuperCheckbox>
 
                 {/*// onChange тоже должен работать*/}
-                <SuperCheckbox checked={checked} onChange={testOnChange}/>
+                <SuperCheckbox checked={checked} onChange={testOnChange} />
             </div>
 
-            <hr/>
+            <hr />
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeSuperInputText/>*/}
             {/*<AlternativeSuperButton/>*/}
             {/*<AlternativeSuperCheckbox/>*/}
-            <hr/>
+            <hr />
         </div>
     )
 }
