@@ -46,7 +46,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
         onDoubleClick && onDoubleClick(e)
     }
 
-    const spanClassName = `${s.span} ${className}`
+    const spanClassName = `${s.svg} ${className}`
 
     return (
         <>

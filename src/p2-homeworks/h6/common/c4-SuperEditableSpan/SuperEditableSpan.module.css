@@ -1,7 +1,16 @@
-.span::before {
-  content: '';
-  background: url('./../../../../asssets/pencil.svg');
+.svg {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  height: 31px;
+  padding-top: 10px;
+  cursor: pointer;
+  color: #7af;
+}
+
+.svg::before {
+  content: '';
+  background: url('./../../../../asssets/whitePencil.svg');
+}
+
+.span {
+  margin: 10px 0px 10px 0px;
 }
