@@ -7,8 +7,7 @@
 }
 
 .svg::before {
-  content: '';
-  background: url('./../../../../asssets/whitePencil.svg');
+  content: '\270E';
 }
 
 .span {

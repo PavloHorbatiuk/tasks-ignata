@@ -16,7 +16,7 @@ function HW6() {
     }
     useEffect(() => {
         setValue(restoreState('editable-span-value', value))
-    }, [])
+    }, [value])
 
     return (
         <div>
@@ -28,7 +28,7 @@ function HW6() {
                 <SuperEditableSpan
                     value={value}
                     onChangeText={setValue}
-                    spanProps={{ children: value ? undefined : 'enter text...' }}
+                    spanProps={{ children: value ? undefined : ' enter text...' }}
                 />
                 <img className={s.svg} src={pencil} alt='pencil' />
             </div>
