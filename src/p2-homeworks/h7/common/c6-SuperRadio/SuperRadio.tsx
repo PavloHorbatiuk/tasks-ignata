@@ -31,7 +31,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
                 type={'radio'}
                 onChange={onChangeCallback}
                 checked={value === o}
-                name={'radio'}
+                name={name}
             // name, checked, value, onChange
             />
             {o}
@@ -39,9 +39,9 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
     )) : []
 
     return (
-        <>
+        <div className={s.parrent}>
             {mappedOptions}
-        </>
+        </div>
     )
 }
 

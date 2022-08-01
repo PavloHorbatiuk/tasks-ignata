@@ -25,7 +25,13 @@
   border: 2px solid #cc99ff;
 }
 
+.parrent {
+  display: flex;
+}
+
 .label {
+  display: flex;
+  flex-direction: row;
   cursor: pointer;
 }
 
