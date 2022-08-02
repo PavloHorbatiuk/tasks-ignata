@@ -10,7 +10,7 @@ interface ActionDown {
 }
 interface ActionCheck {
 	type: 'check';
-	payload: string;
+	payload: number;
 }
 type Action = ActionSort | ActionCheck | ActionDown;
 export const homeWorkReducer = (
@@ -29,7 +29,7 @@ export const homeWorkReducer = (
 		}
 		case 'check': {
 			// need to fix
-			return [...state].filter(f => f.age > 18);
+			return [...state].filter(f => f.age > action.payload);
 		}
 		default:
 			return state;
