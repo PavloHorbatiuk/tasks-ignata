@@ -13,10 +13,9 @@ function HW6() {
     const restore = () => {
         setValue('')
         saveState<string>('editable-span-value', "")
-    }
-    useEffect(() => {
         setValue(restoreState('editable-span-value', value))
-    }, [value])
+    }
+
 
     return (
         <div>
