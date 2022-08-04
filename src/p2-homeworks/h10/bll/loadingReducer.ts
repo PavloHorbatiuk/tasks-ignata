@@ -1,14 +1,33 @@
-const initState = {
-
+enum ReducerType {
+	IS_LOADING = 'isLoading',
+}
+interface initialStateType {
+	isLoading: boolean;
 }
 
-export const loadingReducer = (state = initState, action: any): any => { // fix any
-    switch (action.type) {
-        case '': {
-            return state
-        }
-        default: return state
-    }
-}
+const initState: initialStateType = {
+	isLoading: false,
+};
 
-export const loadingAC = (): any => {} // fix any
+export const loadingReducer = (
+	state: initialStateType = initState,
+	action: ActionLoadingType
+): initialStateType => {
+	// fix any
+	switch (action.type) {
+		case ReducerType.IS_LOADING: {
+			return { ...state, isLoading: action.payload };
+		}
+		default:
+			return state;
+	}
+};
+
+export const loadingAC = (status: boolean): loadingAcType =>
+	({
+		type: ReducerType.IS_LOADING,
+		payload: status,
+	} as const); // fix any
+
+type loadingAcType = { type: ReducerType.IS_LOADING; payload: boolean };
+type ActionLoadingType = loadingAcType;
