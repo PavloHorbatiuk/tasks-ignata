@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
 
@@ -8,30 +8,34 @@ function HW11() {
 
     return (
         <div>
-            <hr/>
+            <hr />
             homeworks 11
 
             {/*should work (должно работать)*/}
             <div>
                 <span>{value1}</span>
                 <SuperRange
-                    // сделать так чтоб value1 изменялось
+                    value={value1}
+                    onChangeRange={setValue1}
+                // сделать так чтоб value1 изменялось
                 />
             </div>
 
             <div>
                 <span>{value1}</span>
-                <SuperDoubleRange
-                    // сделать так чтоб value1 и value2 изменялось
-                />
+                {/*<SuperDoubleRange*/}
+                {/*    onChangeRange={ }*/}
+                {/*    value={[value1, value2]}*/}
+                {/*// сделать так чтоб value1 и value2 изменялось*/}
+                {/*/>*/}
                 <span>{value2}</span>
             </div>
 
-            <hr/>
+            <hr />
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeSuperRange/>*/}
             {/*<AlternativeSuperDoubleRange/>*/}
-            <hr/>
+            <hr />
         </div>
     )
 }
